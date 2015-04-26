@@ -6,6 +6,14 @@ var React = require('react');
 // Alias for making element creation less verbose
 var DOM = React.createElement;
 var DefaultLayout = require('./layouts/default');
+var DotView = function (numDots) {
+  if (numDots > 1) {
+    return "there are a line of " + numDots + " dots";
+  }
+};
+
+
+
 
 var IndexComponent = React.createClass({
   displayName: 'IndexComponent',
@@ -18,19 +26,25 @@ var IndexComponent = React.createClass({
           DOM('div', {
               className: 'yeogurt-info'
             },
-            DOM('h1', null, 'Welcome to Yeogurt!'),
-            DOM('p' ,null,
-              'Take a look at the ', DOM('a', {
-                href: 'https://github.com/larsonjj/generator-yeogurt#yeogurt-generator---'
-              }, 'documentation'), ' and start mixing up something awesome.'
-            ),
-            DOM('p' ,null,
-              DOM('img', {
-                src: '/images/yeogurt-swirl.png',
-                width: '75px',
-                className: 'logo'
-              })
+            DOM('h1', null, 'Pacman!'),
+            DOM('p', null, 'You open your eyes. What is this place? You don\'t recognise it that\'s for sure. All you know is that you are starving.' ),
+            DOM('p', null, 'You look down. Strange. You seem to be different. There\'s a yellowy quality to your skin. Are you sick? You don\' t feel sick. Just hungry. Really hungry.'),
+            DOM('p', null, 'And you\'re spherical. You\'re spherical!', 
+              ' Completely round...waaaaaat? This is utterly bizarre.', 
+              ' You try and think back how you got here but you are too hungry to concentrate.', 
+              ' You need ', DOM('strike',null,'food'), ' to eat!'),
+            DOM('p',null,'Some unknown force is compelling you forwards.',
+              ' You look up. You see what you can only describe as bright yellow dots ahead of you and boy do they look delicious!') , 
+
+            DOM('div', { 
+              id:'maze-position' 
+            }, 
+            DOM('p', null, 'You are in a corridor. The walls are radiating a deep blue. Looking ahead of you ', DotView(8))
             )
+              // DOM('p', null, 'You are in a corridor. The walls are radiating a deep blue. Looking ahead of you ', DotView(numDots),
+              // 'In the foreground you can see another path off ahead to the right.',
+              // 'You can leave forwards or backwards' )
+            // )
           )
         ),
         DOM('code', {

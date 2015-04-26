@@ -21,6 +21,7 @@ describe('Index Component', function() {
 
   it('provides the "Index Component" instance', function() {
     // Expect it to exist
+    console.log("Hi", this.indexComponent);
     expect(this.indexComponent).to.be.ok;
   });
 
