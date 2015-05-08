@@ -8,11 +8,12 @@ var DOM = React.createElement;
 var DefaultLayout = require('./layouts/default');
 var DotView = function (numDots) {
   if (numDots > 1) {
-    return "there are a line of " + numDots + " dots";
+    return 'there are a line of ' + numDots + ' dots';
+  } 
+  else {
+    return 'there is a single delicious dot. Yummy!';
   }
 };
-
-
 
 
 var IndexComponent = React.createClass({
@@ -39,12 +40,12 @@ var IndexComponent = React.createClass({
             DOM('div', { 
               id:'maze-position' 
             }, 
-            DOM('p', null, 'You are in a corridor. The walls are radiating a deep blue. Looking ahead of you ', DotView(8))
-            )
-              // DOM('p', null, 'You are in a corridor. The walls are radiating a deep blue. Looking ahead of you ', DotView(numDots),
-              // 'In the foreground you can see another path off ahead to the right.',
-              // 'You can leave forwards or backwards' )
-            // )
+            DOM('p', null, 'You are in a corridor. The walls are radiating a deep blue. Looking ahead of you ', DotView(8)),
+              'In the foreground you can see another path off ahead to the right.',
+              'You can leave forwards or backwards'
+            ),
+            DOM('p', null, 'You feel like a dot.')
+
           )
         ),
         DOM('code', {
